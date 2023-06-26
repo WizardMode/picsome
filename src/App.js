@@ -8,7 +8,7 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route exact path="/https://github.com/WizardMode/picsome/" element={<Photos />} />
+        <Route exact path="/" element={<Photos />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
