@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/picsome" element={<Photos />} />
-        <Route path="/picsome/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );
