@@ -5,14 +5,19 @@ import CartItem from "../components/CartItem"
 function Cart() {
     const [buttonText, setButtonText] = useState("Place Order")
     const {cartItems, emptyCart} = useContext(Context)
-    // const totalCost = 5.99 * cartItems.length
-    let totalCost = 0
-    const totalItems = cartItems.forEach(item => {
-        totalCost += item.price
+    
+    const priceItems = [0]
+    cartItems.map(item => (
+        priceItems.push(item.price)
+    ))
+    
+    const sum = priceItems.reduce(function(a, b) {
+        return a + b
     })
 
-    //console.log(sum)
-   // const totalCostDisplay = totalCost.toLocaleString("en-US", {style: "currency", currency: "USD"})
+    console.log(sum)
+
+    const totalCostDisplay = sum.toLocaleString("en-US", {style: "currency", currency: "USD"})
 
     const cartItemElements = cartItems.map(item => (
         <CartItem key={item.id} item={item} />
@@ -31,7 +36,7 @@ function Cart() {
         <main className="cart-page">
             <h1>Check out</h1>
             {cartItemElements}
-            <p className="total-cost">Total: {totalCost}</p>
+            <p className="total-cost">Total: {totalCostDisplay}</p>
             {
                 cartItems.length > 0 ?
                 <div className="order-button">
