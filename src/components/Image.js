@@ -32,6 +32,7 @@ function Image({className, img}) {
             <img src={img.url} className="image-grid" />
             {heartIcon()}
             {cartIcon()}
+            {hovered && <p class="price">${img.price}</p>}
         </div>
     )
 }
