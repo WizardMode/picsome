@@ -6,6 +6,10 @@
   --blue: #ACE6EC;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   font-family: 'Oswald', sans-serif;
   margin: 0;
@@ -140,23 +144,43 @@ footer {
   background-color: var(--pink);
   display: flex;
   justify-content: center;
+  align-items: center;
   color: white;
   font-family: inherit;
 
   bottom: 0;
   width: 100%;
   margin-top: auto;
+  gap: 7px;
+  padding: 10px;
 }
 
 footer p {
-  padding: 10px;
+  font-size: 18px;
+  padding: 0px;
   margin: 0px;
 }
 
+.icon {
+  width: 25px;
+  height: 25px;
+}
 
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
 
 
 a:visited { color: var(--light-blue); }
 a:hover { color: var(--light-blue); }
 a:active { color: var(--light-blue); }
+
+.link {
+  color: white;
+}
+
+
 
